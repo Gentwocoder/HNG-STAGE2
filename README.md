@@ -70,7 +70,7 @@ pip install -r requirements.txt
 Create a `.env` file in the project root:
 
 ```bash
-cp .env.example .env
+nano .env
 ```
 
 Edit `.env` and configure your settings:
