@@ -336,10 +336,3 @@ hngstage2/
 - Exchange rates are fetched in real-time during refresh
 - Summary images are generated using Pillow (PIL)
 
-## License
-
-[Your License Here]
-
-## Contact
-
-[Your Contact Information]
