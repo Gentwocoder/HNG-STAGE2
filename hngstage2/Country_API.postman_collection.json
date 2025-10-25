@@ -1,0 +1,165 @@
+{
+  "info": {
+    "name": "Country Currency & Exchange API",
+    "description": "API endpoints for managing country data with currency and exchange rates",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Refresh Countries",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/countries/refresh",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["countries", "refresh"]
+        },
+        "description": "Fetch all countries and exchange rates, then cache them in the database"
+      }
+    },
+    {
+      "name": "Get All Countries",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/countries",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["countries"]
+        },
+        "description": "Get all countries from the database"
+      }
+    },
+    {
+      "name": "Get Countries by Region",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/countries?region=Africa",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["countries"],
+          "query": [
+            {
+              "key": "region",
+              "value": "Africa",
+              "description": "Filter by region (e.g., Africa, Europe, Asia)"
+            }
+          ]
+        },
+        "description": "Filter countries by region"
+      }
+    },
+    {
+      "name": "Get Countries by Currency",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/countries?currency=NGN",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["countries"],
+          "query": [
+            {
+              "key": "currency",
+              "value": "NGN",
+              "description": "Filter by currency code (e.g., NGN, USD, EUR)"
+            }
+          ]
+        },
+        "description": "Filter countries by currency code"
+      }
+    },
+    {
+      "name": "Get Countries Sorted by GDP",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/countries?sort=gdp_desc",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["countries"],
+          "query": [
+            {
+              "key": "sort",
+              "value": "gdp_desc",
+              "description": "Sort options: gdp_desc, gdp_asc, population_desc, population_asc, name_asc, name_desc"
+            }
+          ]
+        },
+        "description": "Sort countries by estimated GDP (descending)"
+      }
+    },
+    {
+      "name": "Get Single Country",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/countries/Nigeria",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["countries", "Nigeria"]
+        },
+        "description": "Get a single country by name"
+      }
+    },
+    {
+      "name": "Delete Country",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/countries/Nigeria",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["countries", "Nigeria"]
+        },
+        "description": "Delete a country record by name"
+      }
+    },
+    {
+      "name": "Get Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["status"]
+        },
+        "description": "Get total countries and last refresh timestamp"
+      }
+    },
+    {
+      "name": "Get Summary Image",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/countries/image",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["countries", "image"]
+        },
+        "description": "Serve the generated summary image"
+      }
+    }
+  ]
+}
